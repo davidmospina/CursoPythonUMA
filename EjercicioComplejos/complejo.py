@@ -20,15 +20,21 @@ class complejo:
             cadena = cadena+ " " + '+' + " " + str(self.img)+ ' i'
         return cadena
     
-    @classmethod
+  #  @classmethod
     
-    def cuantosHay(cls):
-        print("se han definido:" cls._cuantos)
+    # def cuantosHay(cls):
+    #     print("se han definido:" cls._cuantos)
        
+
 def suma(c1, c2):
     return complejo(c1.real+c2.real, c1.img + c2.img)
 
+#<<<<<<<< HEAD
 #prueba de commit en main paralelo la commit de develop
+#=======
+#prueba para un commit en otra rama
+
+#>>>>>>> 1ca249c46506cb60923bbc4a033377c2668e05c5
 
 
 
