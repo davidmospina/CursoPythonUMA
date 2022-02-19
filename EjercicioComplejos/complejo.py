@@ -28,6 +28,8 @@ class complejo:
 def suma(c1, c2):
     return complejo(c1.real+c2.real, c1.img + c2.img)
 
+#prueba de commit en main paralelo la commit de develop
+
 
 
 # z = complejo(3,4)
