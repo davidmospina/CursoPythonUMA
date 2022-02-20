@@ -20,11 +20,10 @@ class complejo:
             cadena = cadena+ " " + '+' + " " + str(self.img)+ ' i'
         return cadena
     
-  #  @classmethod
+    @classmethod
     
-    # def cuantosHay(cls):
-    #     print("se han definido:" cls._cuantos)
-       
+    def cuantosHay(cls):
+        print("se han definido:", cls.__cuantos)
 
 def suma(c1, c2):
     return complejo(c1.real+c2.real, c1.img + c2.img)
