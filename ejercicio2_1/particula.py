@@ -21,8 +21,8 @@ class particula:
     
     def muestra(self):
         print("la posicion es: ", self.pos)
-        print("la velocidad es:", self.vel)
-        print("la aceleracion es",self.acc)
+        print("la velocidad es: ", self.vel)
+        print("la aceleracion es: ",self.acc)
     
 
 
