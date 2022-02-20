@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 class complejo:
     __cuantos = 0
     def __init__(self,r,i):
@@ -19,11 +20,22 @@ class complejo:
         else:
             cadena = cadena+ " " + '+' + " " + str(self.img)+ ' i'
         return cadena
+
+    def prepara(self):
+        plt.plot(self.real, self.img,"ro")
+
     
     @classmethod
     
     def cuantosHay(cls):
         print("se han definido:", cls.__cuantos)
+
+    @staticmethod 
+
+    def pinta():
+        plt.ylabel('Imaginaria')
+        plt.xlabel('Real')
+        plt.show()
 
 def suma(c1, c2):
     return complejo(c1.real+c2.real, c1.img + c2.img)
