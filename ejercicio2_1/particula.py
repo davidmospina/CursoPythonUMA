@@ -18,6 +18,13 @@ class particula:
         
     def distancia(self, otra):
         return ((self.pos[0]-otra.pos[0])**2+(self.pos[1]-otra.pos[1])**2+(self.pos[2]-otra.pos[2])**2)**(1/2)
+    
+    def muestra(self):
+        print("la posicion es: ", self.pos)
+        print("la velocidad es:", self.vel)
+        print("la aceleracion es",self.acc)
+    
+
 
     
 
