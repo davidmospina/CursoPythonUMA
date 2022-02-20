@@ -40,15 +40,15 @@ print('fin') """
 Funcion_prueba();
 print('hola')
  """
-# import random
-# randomlist = list(range(1,100))
+import random
+randomlist = list(range(-100,100))
 
-# print(randomlist)
+print(randomlist)
 
-# randSample = random.sample(randomlist, 3)
-# print(randSample) 
+randSample = random.sample(randomlist, 3)
+print(randSample) 
 
-import numpy as np # Importamos numpy como el alias np
+# mport numpy as np # Importamos numpy como el alias np
 # g=np.array( [[3,4,-9], [7,4,-5] ,[1,3,9]] )
 # print(g)
 # b=np.array( [[-9], [-5] ,[9]] )
@@ -63,8 +63,8 @@ import numpy as np # Importamos numpy como el alias np
 # print(detg)
 
 
-identidad = np.eye(4,4)
-print(identidad)
+# identidad = np.eye(4,4)
+# print(identidad)
 
-identidadT = identidad.T
-print(identidadT)
+# identidadT = identidad.T
+# print(identidadT)
