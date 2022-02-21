@@ -28,7 +28,9 @@ from complejo import complejo, suma
 #prueba de ploteo
 zz1 = complejo(4, 1)
 otroComplejo = complejo(1, 0)
-zz1.inc(otroComplejo)
-zz1.prepara()
-otroComplejo.prepara()
-complejo.pinta()
+# zz1.inc(otroComplejo)
+# zz1.prepara()
+#otroComplejo.prepara()
+#complejo.pinta()
+
+print(zz1 + zz1)

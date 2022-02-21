@@ -24,6 +24,10 @@ class complejo:
     def prepara(self):
         plt.plot(self.real, self.img,"ro")
 
+    def __add__(self,otro):
+        print("voy sumar otro")
+        return suma(self,otro)
+
     
     @classmethod
     
