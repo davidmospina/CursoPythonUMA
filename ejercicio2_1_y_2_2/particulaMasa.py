@@ -13,7 +13,7 @@ class particulaMasa(particula):
     def init_random(self):
         "los parametros de la particula se incializan de una manera aleatoria."
         super().init_random()
-        self.masa = random.randint(0,100)
+        self.masa = np.random.randint(0,100)
     
     def muestra(self):
         "impriema los parametros de la particula"
@@ -24,8 +24,9 @@ class particulaMasa(particula):
         dx = otra.pos[0]- self.pos[0]
         dy = otra.pos[1]- self.pos[1]
         dz = otra.pos[2]- self.pos[2]
+        dv = np.array([dx,dy,dz])
         dt = self.distancia(otra)
-        self.acc = [-G*self.masa*dx/(dt**3),-G*self.masa*dy/(dt**3),-G*self.masa*dz/(dt**3)]
+        self.acc = -G*self.masa/(dt**3)*dv
         
         return self.acc
     def actualiza_velocidad_y_posicion(self,deltat):

@@ -13,8 +13,10 @@ class particula:
         self.acc = pAcc
         
     def init_random(self):
-        self.pos = random.sample(list(range(-100,100)), 3)
-        self.vel = random.sample(list(range(-100,100)), 3)
+        self.pos = np.random.randint(-100,100,3)
+        self.vel = np.random.randint(-100,100,3)
+        
+
         
     def distancia(self, otra):
         return ((self.pos[0]-otra.pos[0])**2+(self.pos[1]-otra.pos[1])**2+(self.pos[2]-otra.pos[2])**2)**(1/2)
