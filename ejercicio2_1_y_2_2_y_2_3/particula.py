@@ -2,10 +2,12 @@ import numpy as np
 import random
 
 class particula:
+    __cuantas = 0
     def __init__ (self):
         self.pos = np.array([0.0,0.0,0.0])
         self.vel = np.zeros(3)
         self.acc = np.zeros(3)
+        particula.__cuantas += 1
 
     def set_valores(self, pPos, pVel,pAcc):
         self.pos = pPos
@@ -25,6 +27,11 @@ class particula:
         print("la posicion es: ", self.pos)
         print("la velocidad es: ", self.vel)
         print("la aceleracion es: ",self.acc)
+
+    @classmethod
+    
+    def cuantasHay(cls):
+        print("se han definido: "+ str(cls.__cuantas) + " particulas")
     
 
 

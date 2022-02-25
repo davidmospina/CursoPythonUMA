@@ -42,5 +42,3 @@ class particulaMasa(particula):
  
     def aceleracion_cero(self):
         self.acc = np.zeros(3)
-
-    
