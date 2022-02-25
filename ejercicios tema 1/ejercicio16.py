@@ -6,20 +6,23 @@ from pynput import keyboard as kb
 from matplotlib import pyplot as plt
 from scipy.interpolate import interp1d
 
-def pulsa(tecla):
-	end = True
+# def pulsa(tecla):
+# 	end = True
 
-with kb.Listener(pulsa) as escuchador:
-	escuchador.join()
+# with kb.Listener(pulsa)def pulsa(tecla):
+# 	end = True
+
+# with kb.Listener(pulsa) as escuchador:
+# 	escuchador.join() as escuchador:
+# 	escuchador.join()
+
 
 
 sense = SenseHat()
-pres = np.array()
-hum = np.array()
-temp = np.array()
-t = np-np.array()
-
-
+pres = np.zeros(1)
+hum = np.zeros(1)
+temp = np.zeros(1)
+t = np.zeros(1)
 red = (250,0,0)
 blue = (0,0,255)
 
@@ -30,15 +33,15 @@ j= 0
 end = False
 
 while end == False:
-    temp.append(sense.temperature)
+    temp = np.append(temp,sense.temperature)
 
-    hum.append(sense.humidity)
+    hum = np.append(hum,sense.humidity)
 
-    pres.append(sense.pressure)
+    pres = np.append(pres,sense.pressure)
 
-    plt.plot(t,hum, label = 'humedad')
-    plt.show()
-    t.append(time.localtime())
+    # plt.plot(t,hum, label = 'humedad')
+    # plt.show()
+    t = np.append(t,time.localtime())
     time.sleep(1)
     pixels = [ red if temp[j]>tempL else blue for i in range(64)]
     sense.set_pixel(pixels)

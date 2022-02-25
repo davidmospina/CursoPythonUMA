@@ -1,6 +1,6 @@
 from simulacion import *
 
-sim =simulacion(2,4)
+sim =simulacion(2,0.5)
 sim.simula()
 
 # for i in range(2):            

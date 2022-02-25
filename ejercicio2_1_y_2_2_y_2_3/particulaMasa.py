@@ -1,4 +1,3 @@
-from turtle import pos
 from particula import *
 G = 6.67259e-11
 class particulaMasa(particula):

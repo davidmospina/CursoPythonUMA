@@ -1,6 +1,6 @@
 from numpy import append
 from particulaMasa import *
-deltat = 2
+deltat = 0.1
 class simulacion:
     def __init__(self,NumParticulas,ptiempoTot):
         self.tiempoTot = ptiempoTot
@@ -29,5 +29,8 @@ class simulacion:
             print("\n")
 
     def simula(self):
-        for i in range(int(self.tiempoTot/deltat)):
+
+        tiempo = 0.0
+        while tiempo < self.tiempoTot:
+            tiempo = tiempo + deltat
             self.avanza()
