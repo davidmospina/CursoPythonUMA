@@ -2,9 +2,8 @@ from matplotlib.pyplot import ginput
 from sense_emu import SenseHat
 import numpy as np
 import time 
-from pynput import keyboard as kb
 from matplotlib import pyplot as plt
-from scipy.interpolate import interp1d
+from EmulatorGUI import GPIO
 
 # def pulsa(tecla):
 # 	end = True
@@ -27,8 +26,6 @@ red = (250,0,0)
 blue = (0,0,255)
 
 
-
-end = False
 
 for i in range(100):
     temp = np.append(temp,sense.temperature)
