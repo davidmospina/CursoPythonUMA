@@ -20,12 +20,12 @@ class particulaMasa(particula):
         print("la masa de la particula es: ",self.masa)
         
     def aceleracion_gravitatoria(self, otra):
-        dx = -otra.pos[0]+ self.pos[0]
-        dy = -otra.pos[1]+ self.pos[1]
-        dz = -otra.pos[2]+ self.pos[2]
-        dv = np.array([dx,dy,dz])
+        dx = otra.pos[0]- self.pos[0]
+        dy = otra.pos[1]- self.pos[1]
+        dz = otra.pos[2]- self.pos[2]
+        dv = np.array([-dx,-dy,-dz])
         dt = self.distancia(otra)
-        self.acc = -G*self.masa/(dt**3)*dv
+        self.acc = self.acc - G*otra.masa/(dt**3)*dv
         
         return self.acc
     def actualiza_velocidad_y_posicion(self,deltat):

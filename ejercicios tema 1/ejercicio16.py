@@ -19,32 +19,30 @@ from scipy.interpolate import interp1d
 
 
 sense = SenseHat()
-pres = np.zeros(1)
-hum = np.zeros(1)
-temp = np.zeros(1)
-t = np.zeros(1)
+pres = np.array([])
+hum = np.array([])
+temp = np.array([])
+
 red = (250,0,0)
 blue = (0,0,255)
 
-tempL = 20
 
 
-j= 0
 end = False
 
-while end == False:
+for i in range(100):
     temp = np.append(temp,sense.temperature)
 
     hum = np.append(hum,sense.humidity)
+    print(hum[i])
 
-    pres = np.append(pres,sense.pressure)
-
-    # plt.plot(t,hum, label = 'humedad')
-    # plt.show()
-    t = np.append(t,time.localtime())
+    pres = np.append(pres,sense.pressure)  
+    
     time.sleep(1)
-    pixels = [ red if temp[j]>tempL else blue for i in range(64)]
-    sense.set_pixel(pixels)
-    print(sense.temperature)
-    j= j + 1
+    pixels = [ red if i<sense.temperature else blue for i in range(64)]
+    sense.set_pixels(pixels)
+  
+
+plt.plot(hum,label = 'humedad')
+plt.show()
 
