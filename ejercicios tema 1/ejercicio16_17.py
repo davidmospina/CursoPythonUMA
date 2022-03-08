@@ -1,4 +1,4 @@
-from EmulatorGUI import GPIO
+from GPIOEmulator.EmulatorGUI import GPIO
 from matplotlib.pyplot import ginput
 from sense_emu import SenseHat
 import numpy as np
@@ -16,6 +16,8 @@ from matplotlib import pyplot as plt
 # 	escuchador.join()
 
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(5, GPIO.OUT)
 
 sense = SenseHat()
 pres = np.array([])
@@ -33,12 +35,18 @@ for i in range(100):
     hum = np.append(hum,sense.humidity)
     print(hum[i])
 
-    pres = np.append(pres,sense.pressure)  
+    pres = np.append(pres,sense.pressure)
+    
+    if sense.temperature <= 20:
+        GPIO.output(5,True)
+    else:
+        GPIO.output(5,False)
     
     time.sleep(1)
     pixels = [ red if i<sense.temperature else blue for i in range(64)]
     sense.set_pixels(pixels)
-  
+
+
 
 plt.plot(hum,label = 'humedad')
 plt.show()
