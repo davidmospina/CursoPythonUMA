@@ -1,5 +1,4 @@
 from GPIOEmulator.EmulatorGUI import GPIO
-from matplotlib.pyplot import ginput
 from sense_emu import SenseHat
 import numpy as np
 import time 
