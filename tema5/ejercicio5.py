@@ -18,7 +18,7 @@ fieldNames = ['press','temp','hum']
 
 writer = csv.DictWriter(file, dialect='excel', fieldnames= fieldNames)
 
-#writer.writeheader()
+writer.writeheader()
 
 for i in range(20):
     writer.writerow({'press': sense.pressure, 'temp':sense.temperature, 'hum': sense.humidity})
