@@ -20,7 +20,15 @@ for row in Objeto_csv:
     y.append(int(row[1]))
     z.append(int(row[2]))
 
-lines = list(range(len(x))) """
+lines = list(range(len(x)))
+
+fig, graph = plt.subplots() 
+graph.plot(lines,x,label = 'vibracion X')
+graph.plot(lines,y,label = 'vibracion Y')
+graph.plot(lines,z,label = 'vibracion Z')
+plt.legend()
+plt.show() 
+ """
 
 #Otra forma de hacerlo
 """ with open('aceleraciones.csv') as csvfile:
