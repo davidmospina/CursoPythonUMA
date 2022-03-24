@@ -40,7 +40,7 @@ class DialogoTamano:
         self.boton1=ttk.Button(self.dialogo, text="Confirmar", command=self.confirmar)
         self.boton1.grid(column=1, row=2, padx=5, pady=5)
         self.dialogo.protocol("WM_DELETE_WINDOW", self.confirmar)
-        self.dialogo.resizable(0,0)
+        self.dialogo.resizable(True,True)
         self.dialogo.grab_set()
 
     def mostrar(self):

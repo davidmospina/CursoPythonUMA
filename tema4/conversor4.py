@@ -7,7 +7,7 @@ class Conversor:
     def __init__(self):
             
         self.ventana = tk.Tk()
-        self.agregar_menu(self)
+        self.agregar_menu()
 
         self.labelframe1=ttk.LabelFrame(self.ventana, text="Datos de Entrada:")        
         self.labelframe1.grid(column=0, row=0, padx=5, pady=10) 
@@ -53,8 +53,11 @@ class Conversor:
         self.ventana.config(menu=self.menubar)
         self.opciones = tk.Menu(self.menubar, tearoff=0)
         self.opciones.add_command(label="Acerca de", command=self.acerca)
-        self.menubar1.add_cascade(label="Opciones", menu=self.opciones1)    
+        self.opciones.add_command(label="Opcion de prueba", command=self.prueba)
+        self.menubar.add_cascade(label="Opciones", menu=self.opciones)    
 
+    def prueba():
+        hola = "hola"
 
     def calcularConversion(self):
 
@@ -113,7 +116,9 @@ class Conversor:
             self.finalFahrenheit=tk.Label(self.labelframe3, text = self.valorF, foreground= "blue")
             self.finalFahrenheit.grid(column=1, row=nConversiones)
             nConversiones+=1        
-
+    
+    def acerca(self):
+        mb.showinfo("Información", "Este programa fue desarrollado para el aprendizaje de Python y tkinter.")
 
 Conversor1 = Conversor()
 Conversor1.ventana.mainloop()
