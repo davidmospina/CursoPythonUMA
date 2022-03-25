@@ -62,7 +62,7 @@ endGame= threading.Barrier(4, timeout = 5)
 
 listener = keyboard.Listener(on_press=on_press)
 listener.start()  # start to listen on a separate thread
-on_press()
+
 p1 = player(0)
 p2 = player(1)
 p3 = player(2)
