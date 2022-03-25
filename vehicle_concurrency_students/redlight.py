@@ -22,5 +22,11 @@ class RedLight(threading.Thread):
 
     def run(self):
         while True:
-            # TODO
-            sleep(0.2)
+                if self.activated:
+                    self.pos = 0
+                    for i in range(4):
+                        self.pos +=1
+                        sleep(0.2)
+   
+                
+            
