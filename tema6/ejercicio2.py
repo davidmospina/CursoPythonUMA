@@ -87,3 +87,13 @@ thread2.join()
 
 
 
+""" Falla aveces la hebra de TEMP.
+
+Tampoco entiendo mucho porqué debo poner el delay si en el ejericio 3 no lo pongo.
+
+No puedo cerrar la ultima ventana.
+
+los fallos van cambiando:
+ main thread is not in main loop
+ async handler deleted by the wrong thread
+ """
