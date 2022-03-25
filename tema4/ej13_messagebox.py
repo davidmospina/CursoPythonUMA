@@ -5,6 +5,7 @@ from tkinter import messagebox as mb
 class Aplicacion:
     def __init__(self):
         self.ventana1=tk.Tk()
+        self.ventana1.title("SUMADOR")
         self.labelframe1=ttk.LabelFrame(self.ventana1, text="Suma de números")
         self.labelframe1.grid(column=0, row=0, padx=10, pady=10)
         self.agregar_componentes()
@@ -37,8 +38,7 @@ class Aplicacion:
             mb.showerror("Cuidado","No puede dejar los cuadros de entrada de números vacíos")
         else:
             suma=int(self.dato1.get())+int(self.dato2.get())
-            self.ventana1.title("La suma es "+str(suma))
-
+            mb.showinfo("resultado","la suma es: " + str(suma))
     def acerca(self):
         mb.showinfo("Información", "Este programa fue desarrollado para el aprendizaje de Python y tkinter.")
         

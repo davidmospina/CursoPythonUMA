@@ -1,7 +1,14 @@
-from sqlite3 import paramstyle
 from numpy import random
 import threading
 import time
+from pynput import keyboard
+import sys
+
+
+def on_press(key):
+    if key.char == ('e'):
+        sys.exit()
+    pass
 
 class player(threading.Thread):
     __cerrojo = threading.Lock()
@@ -49,10 +56,13 @@ class Director(threading.Thread):
             
 
 
-pausa = 5
+
 allNumberChoseen = threading.Barrier(4, timeout = 5)
 endGame= threading.Barrier(4, timeout = 5)
 
+listener = keyboard.Listener(on_press=on_press)
+listener.start()  # start to listen on a separate thread
+on_press()
 p1 = player(0)
 p2 = player(1)
 p3 = player(2)
@@ -64,7 +74,6 @@ p3.start()
 Director1.start()
 
 
-# fallo el primero no se imprime
 """ 
 Que es mejor poner el while en cada clase, o un while que llame cada rato las hebras, o eso no es optipo porque para
 eso esta start """
