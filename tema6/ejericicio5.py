@@ -26,11 +26,11 @@ class Director(threading.Thread):
             
     def elegirGanador(self):
         if self.p0.numero > self.p1.numero and self.p0.numero > self.p2.numero:
-            print("Gana el " + str(self.p0.ID)+ "\n")
+            print("Gana el P" + str(self.p0.ID)+ "\n")
         elif self.p1.numero > self.p0.numero and self.p1.numero > self.p2.numero:
-            print("Gana el " + str(self.p1.ID) + "\n")
+            print("Gana el P" + str(self.p1.ID) + "\n")
         elif self.p2.numero > self.p0.numero and self.p2.numero > self.p1.numero:
-            print("Gana el " + str(self.p2.ID) + "\n")
+            print("Gana el P" + str(self.p2.ID) + "\n")
         
         print()
         
