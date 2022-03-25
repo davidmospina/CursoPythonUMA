@@ -32,26 +32,26 @@ def LecturaSensorT(counter):
     temp = np.array([])
 
     for i in range(counter):
-        time.sleep(1)
+        #time.sleep(1)
         temp = np.append(temp,sense.temperature)
 
-    plt.plot(temp,label = 'temperatura')
+    """     plt.plot(temp,label = 'temperatura')
     plt.legend()
     plt.legend()
     plt.show()
-    
+     """
 
 def LecturaSensorP(counter):
 
     pres = np.array([])
 
     for i in range(counter):
-        time.sleep(1)
+        #time.sleep(1)
         pres = np.append(pres,sense.pressure)
 
-    plt.plot(pres,label = 'presion')
+    """  plt.plot(pres,label = 'presion')
     plt.legend()
-    plt.show()
+    plt.show() """
     
 
 def LecturaSensorH(counter):
@@ -59,13 +59,13 @@ def LecturaSensorH(counter):
     hum = np.array([])
 
     for i in range(counter):
-        time.sleep(1)        
+        #time.sleep(1)        
         hum = np.append(hum,sense.humidity)
 
-    plt.plot(hum,label = 'humedad')
+    """  plt.plot(hum,label = 'humedad')
     plt.legend()
     plt.show()
-    
+     """
 
 sense = SenseHat()
 
@@ -81,7 +81,7 @@ thread0.join()
 thread1.join()
 thread2.join()
 
-
+print("hecho")
 
 
 
