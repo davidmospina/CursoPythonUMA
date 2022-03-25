@@ -29,71 +29,70 @@ class myThread (threading.Thread):
 
 def LecturaSensorT(counter):
 
-    temp = np.array([])
 
     for i in range(counter):
         #time.sleep(1)
+        #temp = np.array([])
+        
+        global temp
         temp = np.append(temp,sense.temperature)
 
-    """     plt.plot(temp,label = 'temperatura')
-    plt.legend()
-    plt.legend()
-    plt.show()
-     """
+
 
 def LecturaSensorP(counter):
 
-    pres = np.array([])
-
+    
     for i in range(counter):
         #time.sleep(1)
+        #pres = np.array([])
+
+        global pres
         pres = np.append(pres,sense.pressure)
 
-    """  plt.plot(pres,label = 'presion')
-    plt.legend()
-    plt.show() """
+    
+ 
     
 
 def LecturaSensorH(counter):
 
-    hum = np.array([])
-
+    
     for i in range(counter):
         #time.sleep(1)        
+        #hum = np.array([])
+
+        global hum
         hum = np.append(hum,sense.humidity)
 
-    """  plt.plot(hum,label = 'humedad')
-    plt.legend()
-    plt.show()
-     """
+
+#temp = np.array([])
+
 
 sense = SenseHat()
 
-thread0 = myThread(0, "Temp", 8)
-thread1 = myThread(1, "Hum", 8)
-thread2 = myThread(2, "Pres", 8)
+temp = np.array([])
+pres = np.array([])
+hum = np.array([])
+
+thread0 = myThread(0, "Temp", 200)
+thread1 = myThread(1, "Hum", 200)
+thread2 = myThread(2, "Pres", 200)
 
 thread0.start()
 thread1.start()
 thread2.start()
 
+
 thread0.join()
 thread1.join()
 thread2.join()
 
+plt.plot(hum,label = 'humedad')
+plt.plot(pres,label= 'presion')
+plt.plot(temp,label = 'temperatura')
+plt.legend()
+
+plt.show()
+
 print("hecho")
 
 
-
-
-
-""" Falla aveces la hebra de TEMP.
-
-Tampoco entiendo mucho porqué debo poner el delay si en el ejericio 3 no lo pongo.
-
-No puedo cerrar la ultima ventana.
-
-los fallos van cambiando:
- main thread is not in main loop
- async handler deleted by the wrong thread
- """
