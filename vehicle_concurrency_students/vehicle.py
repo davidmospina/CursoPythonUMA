@@ -112,8 +112,8 @@ class Vehicle:
                 self.redlight.activate()
         if evento.keysym=='v':
                 self.redlight.deactivate()
-        #if evento.keysym=='g':
-        #        self.fuel.reload()
+        if evento.keysym=='g':
+               self.fuel.reload()
 
 
     def draw_background(self):       
@@ -168,9 +168,12 @@ class Vehicle:
             self.canvas1.itemconfigure(self.light_rear_polygon, state='hidden')                        
 
 
-    def draw_redlight(self):               
+    def draw_redlight(self):
+   
         level = self.redlight.get_status()
+
         pos=1
+
         for l in self.redlight_polygon:
             if pos<=level:
                 self.canvas1.itemconfigure(l, state='normal')
@@ -205,6 +208,7 @@ class Vehicle:
         self.draw_blinker_front()
         self.draw_blinker_rear()
         self.draw_light()
+        
         self.draw_redlight()
 
 

@@ -22,10 +22,7 @@ class Blinker(threading.Thread):
 
     def blink(self):
         self.blinking=not self.blinking
-        if not self.blinking:
-            self.deactivate()
-        else:
-            self.activate()
+
 
 
     def get_activated(self):
